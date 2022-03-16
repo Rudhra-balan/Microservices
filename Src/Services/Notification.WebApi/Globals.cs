@@ -1,0 +1,27 @@
+﻿global using System.Diagnostics;
+global using Common.Lib;
+global using Common.Lib.Caching;
+global using Common.Lib.Exceptions.ErrorHandler;
+global using Common.Lib.JwtTokenHandler;
+global using Common.Lib.ResponseHandler;
+global using Common.Lib.Security;
+global using Common.Lib.Security.Headers;
+global using Common.Lib.SerilogWrapper;
+global using Common.Lib.Swagger;
+global using Microsoft.AspNetCore.Cors.Infrastructure;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Serilog;
+global using Serilog.Debugging;
+global using  Microsoft.AspNetCore.Http.Connections;
+global using  EventBusRabbitMQ;
+global using Microsoft.AspNetCore.SignalR;
+global using EventBus.Events;
+global using EventBus.Abstractions;
+global using Notification.WebApi.IntegrationEvents.Events;
+global using Notification.WebApi.Hubs;
+global using Serilog.Context;
+global using HealthChecks.UI.Client;
+global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using Notification.WebApi.IntegrationEvents.EventHandling;
+

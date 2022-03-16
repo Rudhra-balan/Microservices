@@ -1,0 +1,63 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/Secure/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "SwaggerKey": "Authenticate"
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/account/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "SwaggerKey": "Transaction"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "Authenticate",
+      "Config": [
+        {
+          "Name": "Security WebAPI",
+          "Version": "v1",
+          "Url": "http://localhost:5001/swagger/V1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Transaction",
+      "Config": [
+        {
+          "Name": "Transaction WebAPI",
+          "Version": "v1",
+          "Url": "http://localhost:5002/swagger/V1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost",
+    "ServiceDiscoveryProvider": {
+      "Type": "AppConfiguration",
+      "PollingIntervalSeconds": 10000
+    }
+  }
+}
