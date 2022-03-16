@@ -2,25 +2,15 @@
 
 0. `dotnet` SDK 6.x.
 
-1. C# 
+1. Microservices on .Net platforms which used Asp.Net Web API,RabbitMQ, Ocelot API Gateway,SqlServer,Custom Log Format, Entity Framework Core, CQRS, Security : `Anti Xss` , `Cross Site Scripting Validation`, `DoS`,SignalR ,global Exception Handling and promothus Mertics
 
-2. jwt authentication authorization
-
-3. SignalR with authentication
-     Only send message based on the user login
-
-4. Localization (English,French,German,Spanish)
-    Useage Add Header : [Accept-Language : en or de or es or fr]
-
-5. Security : `Anti Xss` , `Cross Site Scripting Validation`, `DoS`
-
-6. Http Exception Handling 
-
-7. Custom Log Format
-
-8. Asynchronous Businuss Layer
 
 #SignalR Client Console
  
- using jwt authentication authorization to connect signalR and receive the response
+     using jwt authentication authorization to connect signalR and receive the response
+ 
+ #app client console
+ 
+     with resilient Use IHttpClientFactory to implement resilient HTTP requests
+     Implement Retry and Circuit Breaker patterns with exponential backoff with IHttpClientFactory and Polly policies
 
